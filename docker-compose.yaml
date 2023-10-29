@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  lab:
+    build: .
+    command: bash -c "while true; do sleep 10; done"
+    volumes:
+      - "./home:/home/user"
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - "/usr/bin/docker:/usr/bin/docker:ro"
